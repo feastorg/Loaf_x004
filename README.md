@@ -1,6 +1,6 @@
-# x004 LOAF
+# x004 Loaf
 
-LOAF backplane for BREAD.
+Four-Slice Loaf/backplane for building a BREAD from compatible Slices.
 
 ## Introduction
 
