@@ -1,0 +1,166 @@
+schema_version: "1.0"
+
+# ── Identity ──────────────────────────────────────────────────────────────────
+id: "loaf-x004"
+name: "x004 Loaf"
+status: "prototype"
+role: "backplane"
+
+summary: "Four-Slice backplane distributing 12V and I2C over the Slice bus."
+description: null
+
+# ── Versioning ────────────────────────────────────────────────────────────────
+version:
+  hardware: "0.3.0"
+  firmware: null
+  manifest: "0.1.0"
+
+# ── Compatibility ─────────────────────────────────────────────────────────────
+compatibility:
+  loaf_spec: ">=0.1.0 <0.2.0"
+  slice_spec: ">=0.1.0 <0.2.0"
+  crumbs_protocol: null
+
+# ── Hardware ──────────────────────────────────────────────────────────────────
+hardware:
+  controller: null # passive backplane; the controller arrives over the chain connector
+  primary_ic: null
+  hw_gen_current: 2
+  hw_gen_supported: [1, 2]
+  pcb:
+    layers: 2
+    thickness: "1.6mm"
+    copper_weight: "1oz"
+    dimensions: "180mm x 162mm"
+  connectors:
+    - ref: "J1"
+      type: "slice-bus-10pin"
+      purpose: "power-and-i2c"
+    - ref: "J2"
+      type: "slice-bus-10pin"
+      purpose: "power-and-i2c"
+    - ref: "J3"
+      type: "slice-bus-10pin"
+      purpose: "power-and-i2c"
+    - ref: "J4"
+      type: "slice-bus-10pin"
+      purpose: "power-and-i2c"
+    - ref: "J5"
+      type: "barrel-jack"
+      purpose: "power-input"
+  mounting:
+    pattern: "loaf-standard-v0"
+    hole_size: "M3"
+    inset: "5mm"
+  pcb_color_prototype: "blue"
+  pcb_color_production: "green"
+  enclosure:
+    supported: false
+    path: null
+
+# ── Electrical ────────────────────────────────────────────────────────────────
+electrical:
+  input_voltage: "12V"
+  logic_voltage: "5V"
+  max_current: null
+  rails:
+    - name: "+12V"
+      voltage: "12V"
+      max_current: null
+      source: "barrel jack"
+  protection:
+    reverse_polarity: false
+    input_esd: false
+    fuse: false
+
+# ── Interconnect ──────────────────────────────────────────────────────────────
+interconnect:
+  slice_slots: 4
+  bus:
+    type: "i2c"
+    connector: "slice-bus-10pin"
+    signals:
+      - "+12V"
+      - "GND"
+      - "SDA"
+      - "SCL"
+      - "E_STOP"
+      - "INT"
+      - "SYNC"
+  chaining:
+    supported: true
+    connector: "1x10-2.54mm" # 1x10 header + socket pair for chaining Loaves
+
+# ── Firmware ──────────────────────────────────────────────────────────────────
+firmware: null
+
+# ── Artifacts ─────────────────────────────────────────────────────────────────
+artifacts:
+  schematic: "hardware/BREAD_Loaf.kicad_sch"
+  pcb: "hardware/BREAD_Loaf.kicad_pcb"
+  firmware: null
+  docs: "docs/"
+  bom: null
+  gerbers: null
+  pick_and_place: null
+  datasheets: []
+
+# ── Manufacturing ─────────────────────────────────────────────────────────────
+manufacturing:
+  assembly_type: "manual"
+  preferred_fab: null
+  dnp_parts: []
+  critical_parts: []
+  substitutions_allowed: true
+
+# ── Validation ────────────────────────────────────────────────────────────────
+validation:
+  status: "not_validated"
+  tested_revisions: []
+  tests:
+    electrical: false
+    firmware: false
+    integration: false
+  known_issues: []
+
+# ── Safety ────────────────────────────────────────────────────────────────────
+safety:
+  hazards: []
+  max_safe_voltage: "12V"
+  intended_environment: "lab"
+  not_for:
+    - "human safety critical systems"
+
+# ── Relations ─────────────────────────────────────────────────────────────────
+related:
+  supersedes: null
+  superseded_by: null
+  variants: []
+  compatible_loaves:
+    - "loaf-espt"
+  compatible_slices: []
+
+# ── Maintainers ───────────────────────────────────────────────────────────────
+maintainers:
+  - name: "Cameron Brooks"
+    role: "owner"
+
+# ── License ───────────────────────────────────────────────────────────────────
+license:
+  hardware: "CERN-OHL-S-2.0"
+  firmware: "GPL-3.0-or-later"
+  software: "GPL-3.0-or-later"
+  docs: "CC-BY-4.0"
+
+# ── Repository ────────────────────────────────────────────────────────────────
+repository:
+  url: "https://github.com/feastorg/Loaf_x004"
+
+# ── Metadata ──────────────────────────────────────────────────────────────────
+metadata:
+  created: "2026-04-18"
+  updated: "2026-07-13"
+  tags:
+    - "backplane"
+    - "four-slice"
+    - "i2c"
