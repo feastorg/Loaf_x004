@@ -6785,6 +6785,43 @@
 	(dimension
 		(type orthogonal)
 		(layer "User.3")
+		(uuid "1816149d-b023-4386-89a7-1878f3d5c9dc")
+		(pts
+			(xy 165.8 90.6) (xy 169.5 90.8)
+		)
+		(height -16.7)
+		(orientation 0)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 1)
+			(precision 4)
+		)
+		(style
+			(thickness 0.15)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "3.7000 mm"
+			(at 167.65 72.75 0)
+			(layer "User.3")
+			(uuid "1816149d-b023-4386-89a7-1878f3d5c9dc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "User.3")
 		(uuid "214662a9-f715-4d9c-bda5-d06a5537516b")
 		(pts
 			(xy 48.3 77.02) (xy 169.5 77)
