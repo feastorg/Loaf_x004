@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "loaf.yaml"
+  pull_request:
+    paths:
+      - "loaf.yaml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    uses: feastorg/bread-infra/.github/workflows/validate-manifest.yml@main
+    with:
+      manifest_path: loaf.yaml
+      schema_ref: schema-loaf-v1.0
