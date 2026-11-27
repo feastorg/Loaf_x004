@@ -15,4 +15,4 @@ jobs:
     uses: feastorg/bread-infra/.github/workflows/validate-manifest.yml@main
     with:
       manifest_path: loaf.yaml
-      schema_ref: schema-loaf-v1.0
+      schema_ref: schema-v2.0
